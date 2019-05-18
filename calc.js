@@ -60,7 +60,19 @@ let lex = function (input) {
 
             addToken("number", num);
         }
+        else {
+            throw "Unrecognized token";
+        }
     }
 
+    addToken("(end)");
     return tokens;
+};
+
+let parser = function (tokens) {
+    let parseTree = [];
+
+
+
+    return parseTree;
 };
