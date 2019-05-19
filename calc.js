@@ -198,5 +198,20 @@ let evaluate = function (parseTree) {
         }
     };
 
+    let parseNode = function (node) {
+        if (node.type === "number") return node.value;
+        else if (operators[node.type]) {
+            if (node.left) return operators[node.type](parseNode(node.left), parseNode(node.right));
+            return operators[node.type](parseNode(node.right));
+        }
+    };
+
+    for (let i = 0; i < parseTree.length; i++) {
+        let value = parseNode(parseTree[i]);
+        if (typeof value !== "undefined") {
+            output += value + "\n";
+        }
+    }
+
     return output;
 };
