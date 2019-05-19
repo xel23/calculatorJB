@@ -5,7 +5,7 @@ let lex = function (input) {
     let tokens = [];
 
     let isOperator = function (c) {
-        return /[+\-*\/^%=(),]/.test(c);
+        return /[+\-*\/^%()]/.test(c);
     };
 
     let isDigit = function (c) {
