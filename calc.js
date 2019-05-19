@@ -170,3 +170,33 @@ let parse = function(tokens) {
     }
     return parseTree;
 };
+
+let evaluate = function (parseTree) {
+    let output = "";
+
+    let operators = {
+        "+": function(a, b) {
+            return a + b;
+        },
+        "-": function(a, b) {
+            if (typeof b === "undefined") {
+                return -a;
+            }
+            return a - b;
+        },
+        "*": function(a, b) {
+            return a * b;
+        },
+        "/": function(a, b) {
+            return a / b;
+        },
+        "%": function(a, b) {
+            return a % b;
+        },
+        "^": function(a, b) {
+            return Math.pow(a, b);
+        }
+    };
+
+    return output;
+};
