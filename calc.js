@@ -215,3 +215,18 @@ let evaluate = function (parseTree) {
 
     return output;
 };
+
+let calculate = function (input) {
+    try {
+        let tokens = lex(input);
+        let parseTree = parse(tokens);
+        return evaluate(parseTree);
+    } catch (e) {
+        return e;
+    }
+};
+
+document.getElementById("calculate").onclick = function() {
+    let input = document.getElementById("input").value;
+    document.getElementById("output").innerHTML = calculate(input);;
+};
