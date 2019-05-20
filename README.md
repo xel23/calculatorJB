@@ -1,5 +1,5 @@
 # Simple Calculator
-This is the simple JS calculator working on top down operator precedence.
+This is the simple JS calculator working on top down operator precedence. Supported float format.
 
 # Try it
 [On GitHub pages](https://xel23.github.io/calculatorJB/index.html)
